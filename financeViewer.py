@@ -3,15 +3,38 @@ import csv
 def csvToList():
     with open('./2021novtoDec.csv', newline='') as f:
         reader = csv.reader(f)
-        data = list(reader)
-    return data
+        transactions = list(reader)
+    return transactions
+
+def calculateNet(transactions):
+    net = 0
+    for transaction in transactions:
+        net = net + float(transaction[1])
+    return net
+
+def parseDescription(transactions):
+    descriptionSplit = list()
+    for description in transactions:
+        word = description[4].split()
+        descriptionSplit.append(word)
+    return descriptionSplit
+
 
 def main():
-    data = csvToList()
-    total = 0
-    for transaction in data:
-        total = total + float(transaction[1])
-    print(total)
+    transactions = csvToList()
+    net = calculateNet(transactions)
+    print(net)
+    
+    descriptionList = parseDescription(transactions)
+
+    savings = list()
+    for description in descriptionList:
+        for word in description: 
+            if(word == 'SAVE'):
+                print(transactions[1])
+
+    savings = list()
+    
 
 if __name__ == "__main__":
     main()
