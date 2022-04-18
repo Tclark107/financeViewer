@@ -1,0 +1,22 @@
+1) make an expense class where all the types before can inherit from it
+2) keep track of how many transactions there are and make sure we process
+    the same amount
+2) write tests for the code
+3) break up expenses even further to see spending habits (entertainment)
+4) make ability to download csv on its own
+5) automate it so that it does it weekly
+6) make another script that will use generated files an make a monthly
+  report
+
+This would be everything that I would want and this would make it really
+cool
+After that there could be a couple things that you could do 
+
+Stretch goals:
+1) make a machine learning algorithm that will learn whats expenses
+  should go where. It builds its dataset as a user chooses what goes
+  where
+2) make it user friendly with gui's
+3) port it to an app
+4) port it to a website
+5) make it opensource on github
