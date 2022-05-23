@@ -1,12 +1,14 @@
 1) make an expense class where all the types before can inherit from it
 2) keep track of how many transactions there are and make sure we process
     the same amount
-2) write tests for the code
-3) break up expenses even further to see spending habits (entertainment)
-4) make ability to download csv on its own
-5) automate it so that it does it weekly
-6) make another script that will use generated files an make a monthly
+3) write tests for the code
+4) break up expenses even further to see spending habits (entertainment)
+5) make ability to download csv on its own
+6) automate it so that it does it weekly
+7) make another script that will use generated files an make a monthly
   report
+8) make output that tells you how much you need to save to have a 6 month 
+    savings 
 
 This would be everything that I would want and this would make it really
 cool

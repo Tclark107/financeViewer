@@ -11,7 +11,6 @@ class financeManager:
     entertainmentPercent = 0
     savingsPercent       = 0
     unknownPercent       = 0
-
     necessaryTotal       = 0
     entertainmentTotal   = 0
     savingsTotal         = 0
@@ -151,16 +150,17 @@ class financeManager:
 
     def writeToFile():
         # write everyting to a file
-        outputFile = open("results/041022.txt","w")
+        #outputFile = open("results/041022.txt","w")
+        outputFile = open("results/050822.txt","w")
 
-        # eventully I'll have to get rid of the (-) signs so it's prettier
+        # eventully I'll have to get rid of the (-) signs
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.necessaryTotal)       + " on necessary\n")
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.entertainmentTotal)   + " on entertainment\n")
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.savingsTotal)         + " on savings\n\n")
 
-        outputFile.write("necpercentage is "    + "{:.2f}".format(financeManager.necessaryPercent)     + "\n")
-        outputFile.write("entpercentage is "    + "{:.2f}".format(financeManager.entertainmentPercent) + "\n")
-        outputFile.write("savpercentage is "    + "{:.2f}".format(financeManager.savingsPercent)       + "\n\n")
+        outputFile.write("necpercentage is "    + "{:.2f}".format(financeManager.necessaryPercent)     + "%\n")
+        outputFile.write("entpercentage is "    + "{:.2f}".format(financeManager.entertainmentPercent) + "%\n")
+        outputFile.write("savpercentage is "    + "{:.2f}".format(financeManager.savingsPercent)       + "%\n\n")
 
         outputFile.write("You made "            + "{:.2f}".format(financeManager.incomeTotal)          + "\n")
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.expenseTotal)         + "\n") 
@@ -179,8 +179,11 @@ class financeManager:
 
         financeManager.writeToFile()
 
+        for element in financeManager.entertainmentList:
+            print(element)
+
 def main():
-    bankStatement = 'bankStatements/41022.csv' 
+    bankStatement = 'bankStatements/50822.csv' 
     myFinanceManager = financeManager(bankStatement)
     financeManager.calculateFinancials(myFinanceManager.inputFile)
 
