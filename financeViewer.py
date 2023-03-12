@@ -151,7 +151,7 @@ class financeManager:
     def writeToFile():
         # write everyting to a file
         #outputFile = open("results/041022.txt","w")
-        outputFile = open("results/050822.txt","w")
+        outputFile = open("results/052822.txt","w")
 
         # eventully I'll have to get rid of the (-) signs
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.necessaryTotal)       + " on necessary\n")
@@ -183,7 +183,8 @@ class financeManager:
             print(element)
 
 def main():
-    bankStatement = 'bankStatements/50822.csv' 
+
+    bankStatement = 'bankStatements/52822.csv' 
     myFinanceManager = financeManager(bankStatement)
     financeManager.calculateFinancials(myFinanceManager.inputFile)
 
