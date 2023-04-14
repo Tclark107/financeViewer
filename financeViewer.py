@@ -1,6 +1,7 @@
 import csv
 import math
-
+import datetime
+import os
 
 class financeManager:
     net               = 0    
@@ -151,7 +152,7 @@ class financeManager:
     def writeToFile():
         # write everyting to a file
         #outputFile = open("results/041022.txt","w")
-        outputFile = open("results/052822.txt","w")
+        outputFile = open("results/"+ today + ".txt","w")
 
         # eventully I'll have to get rid of the (-) signs
         outputFile.write("You spent "           + "{:.2f}".format(financeManager.necessaryTotal)       + " on necessary\n")
@@ -182,12 +183,26 @@ class financeManager:
         for element in financeManager.entertainmentList:
             print(element)
 
-def main():
 
-    bankStatement = 'bankStatements/52822.csv' 
+def getData():
+    currentDir = os.getcwd()
+    cmd = 'cp /mnt/c/Users/17143/Downloads/Checking1.csv ' + str(currentDir) + '/bankStatements/' + str(today) + '.csv'
+    #TODO# throw error if not found?? if os != 0
+    os.system(cmd)
+
+def cleanup():
+    cmd = 'rm /mnt/c/Users/17143/Downloads/Checking1.csv'
+    os.system(cmd)
+
+def main():
+    getData()
+    bankStatement = 'bankStatements/' + str(today) + '.csv' 
+    print(bankStatement + " hello" )
     myFinanceManager = financeManager(bankStatement)
     financeManager.calculateFinancials(myFinanceManager.inputFile)
+    cleanup()
 
+today = datetime.date.today();
 net = 0
 if __name__ == "__main__":
     main()
